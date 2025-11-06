@@ -32,6 +32,8 @@ public class Game {
                     break;
                 case 2:
                     System.out.println("Jogar...");
+                    String convert = this.convertNumber(2, "binary");
+                    System.out.println("Binário: " + convert);
                     break;
                 case 3:
                     this.showCredits();
@@ -112,4 +114,19 @@ public class Game {
     	System.out.println("Igor José");
     	System.out.println("João Vitor");
     }
+    
+    
+    public String convertNumber(int num, String type) {
+        switch (type.toLowerCase()) {
+            case "binary":
+                return Integer.toBinaryString(num);
+            case "octal":
+                return Integer.toOctalString(num);
+            case "hex":
+                return Integer.toHexString(num);
+            default:
+                return "Formato inválido. Use: binario, octal ou hexadecimal.";
+        }
+    }
+
 }
