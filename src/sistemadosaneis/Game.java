@@ -32,8 +32,13 @@ public class Game {
                     break;
                 case 2:
                     System.out.println("Jogar...");
-                    String convert = this.convertNumber(2, "binary");
-                    System.out.println("Binário: " + convert);
+                    
+                    boolean tutorial = showTutorial();
+                    if (!tutorial) {
+                        System.out.println("GAME OVER");
+                        option = 4;
+                        break;
+                    }
                     break;
                 case 3:
                     this.showCredits();
@@ -115,6 +120,41 @@ public class Game {
     	System.out.println("João Vitor");
     }
     
+    public boolean showTutorial() {
+        Scanner inputTutorial = new Scanner(System.in);
+
+        System.out.println("Ano 2941 da Terceira Era...");
+        System.out.println("A tensão entre os povos da Terra Média está no auge.");
+        System.out.println("Anões e Elfos se enfrentam em uma batalha épica nos portões da Montanha Solitária.");
+        System.out.println("Você é um jovem guerreiro, convocado para decidir o rumo da guerra.");
+        System.out.println("Diante de você, dois caminhos se abrem:");
+        System.out.println("1 - Juntar-se aos Anões, mestres da forja e da lógica binária.");
+        System.out.println("2 - Alinhar-se aos Elfos, guardiões das runas antigas e da sabedoria octal.");
+        System.out.print("\nEscolha sua raça (1 para Anões, 2 para Elfos): ");
+        
+        String race = "";
+        String typeNum = "";
+        int choice;
+        do {
+            choice = inputTutorial.nextInt();
+            
+            switch(choice) {
+                case 1: 
+                    race = "dwarf";
+                    typeNum = "binary";
+                    break;
+                case 2: 
+                    race = "elf";
+                    typeNum = "octal";
+                    break;
+                default: 
+                    System.out.println("Opção inválida");
+            }
+        } while(choice != 1 && choice != 2);
+        
+        inputTutorial.close();
+        return true;
+    }
     
     public String convertNumber(int num, String type) {
         switch (type.toLowerCase()) {
