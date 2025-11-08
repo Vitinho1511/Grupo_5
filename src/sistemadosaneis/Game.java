@@ -4,6 +4,7 @@
  */
 package sistemadosaneis;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -164,5 +165,29 @@ public class Game {
                 return "Formato inválido. Use: binario, octal ou hexadecimal.";
         }
     }
-
+    
+    public int randomInt(int max) {
+        return (int) (Math.random() * max) + 1;
+    }
+    
+    public boolean dwarfWay(Scanner input) {
+        System.out.println("\nVocê escolheu o caminho dos Anões.");
+        System.out.println("Sua mente é afiada como um machado, pronta para decifrar os segredos do sistema binário.");
+        System.out.println("A batalha ruge nos campos diante de Erebor. Soldados elfos avançam com precisão e velocidade, cercando os guerreiros anões. Thorin Escudo de Carvalho, empunhando sua lâmina ancestral, avista um artefato de guerra escondido entre os escombros — uma arma secreta dos antigos reis anões. Para ativá-la e causar dano aos inimigos, ele precisa decifrar um código binário gravado em sua superfície. \nCom o combate se intensificando, Thorin tem apenas 3 tentativas para converter corretamente o código e liberar seu poder contra os elfos. (Dica: o número é entre 1 e 10)");
+        
+        int randomInt = this.randomInt(10);
+        String binary = this.convertNumber(randomInt, "binary");
+        
+        System.out.println("Converta '" + binary + "' para decimal.");
+        
+        int attempts = 3;
+        boolean success = false;
+        int choice;
+        do {
+            choice = input.nextInt();
+            
+            
+        } while (attempts > 0 || success);
+        return true;
+    }
 }
