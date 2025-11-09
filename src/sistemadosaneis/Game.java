@@ -53,7 +53,10 @@ public class Game extends Util {
 						System.out.println("GAME OVER");
 						option = 4;
 						break;
-					} 
+					}
+                    System.out.println("\nParabéns! Você completou o primeiro ato!");
+                    
+                    
                     
                     break;
                 case 3:
@@ -215,4 +218,19 @@ public class Game extends Util {
 		if (!humanResult) return false;
 		return true;
     }
+    
+    public boolean secondAct(Scanner input) {
+    	System.out.println("Os gritos dos orcs começam a se dissipar. As forças combinadas de elfos, anões e humanos conseguiram repelir a primeira onda de ataque. Corpos e armas estão espalhados pelo campo, e a fumaça da batalha ainda paira no ar. Embora a vitória tenha sido parcial, todos sabem que isso foi apenas o começo. Os generais inimigos recuaram, mas não foram derrotados. A Terra Média respira por um instante, mas a guerra ainda não acabou.");
+    	System.out.println("Relatos sombrios chegam de todas as fronteiras: uma última horda orc se reúne, liderada por um senhor da guerra que sobreviveu às batalhas anteriores. A batalha final se aproxima, como nas lendas do fim da Terceira Era. Para se preparar, os exércitos devem reforçar seus arsenais. Os anões precisam adquirir novas armas realizando conversões de binário para decimal. Os elfos, com seus sistemas antigos, usam octal. E os magos, guardiões dos segredos profundos, operam em hexadecimal. Você deve realizar as conversões corretamente para garantir que cada raça esteja equipada para o confronto decisivo.");
+    	
+    	boolean dwarfResult = this.convertEvent(input, "binary", 200, "Conversão correta! Você adquiriu novas armas para os anões!", "Você falhou em decifrar o código binário. Os anões estão desarmados.");
+		if (!dwarfResult) return false;
+		
+		boolean elfResult = this.convertEvent(input, "octal", 200, "Conversão correta! Você adquiriu novas armas para os elfos!", "Você falhou em decifrar o código octal. Os elfos estão desarmados.");
+		if (!elfResult) return false;
+		
+		boolean mageResult = this.convertEvent(input, "hexadecimal", 200, "Conversão correta! Você adquiriu novas armas para os magos!", "Você falhou em decifrar o código hexadecimal. Os magos estão desarmados.");
+		if (!mageResult) return false;
+		return true;
+	}
 }
