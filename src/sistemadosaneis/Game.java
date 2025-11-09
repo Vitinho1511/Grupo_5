@@ -56,7 +56,12 @@ public class Game extends Util {
 					}
                     System.out.println("\nParabéns! Você completou o primeiro ato!");
                     
-                    
+                    boolean secondAct = secondAct(input);
+                    if (!secondAct) {
+						System.out.println("GAME OVER");
+						option = 4;
+						break;
+                    }
                     
                     break;
                 case 3:
