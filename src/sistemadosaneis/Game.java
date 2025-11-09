@@ -210,7 +210,9 @@ public class Game extends Util {
     	boolean dwarfCatapultResult = this.convertEvent(input, "binary", 100, "Conversão correta! Você liberou as catapultas anãs contra os orcs de Gundabad!", "Você falhou em decifrar o código binário. A batalha está perdida.");
     	if (!dwarfCatapultResult) return false;
     	
-    	
+    	System.out.println("Em meio ao caos da batalha, um guerreiro humano corre pelas muralhas de Erebor. Cercado por orcs e sem tempo para buscar reforços, ele encontra uma arma anã deixada para emergências — um lançador de fogo rúnico, forjado pelos mestres da engenharia de Khazad-dûm. Mas a arma não responde a comandos comuns. Para ativá-la, o humano precisa inserir o código de ativação no formato binário, como os anões o projetaram. Você tem 3 tentativas para converter corretamente o número decimal fornecido e liberar o poder da arma contra os invasores.");
+    	boolean humanResult = this.convertEvent(input, "binary", 150, "Conversão correta! Você ativou o lançador de fogo rúnico contra os orcs de Gundabad!", "Você falhou em decifrar o código binário. A batalha está perdida.");
+		if (!humanResult) return false;
 		return true;
     }
 }
